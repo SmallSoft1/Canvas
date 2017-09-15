@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆角矩形</title>
+</head>
+<body>
+    <canvas id="demo" width="200" height="200" style="border: 1px solid #ccc"></canvas>
+    <script>
+        var canvas = document.getElementById("demo");
+        var ctx = canvas.getContext("2d");
+        getRroundedRectangle(ctx,10,100,100,20,20);
+        function getRroundedRectangle(context,r,width,height,offsetX,offsetY){
+            //设置线条颜色
+            context.strokeStyle = "#007ACC";
+            //设置线上宽度
+            context.lineWidth = 1;
+            //开始路径
+            context.beginPath();
+            context.moveTo(offsetX + r, offsetY);
+            context.lineTo(offsetX + width - r, offsetY);
+            context.arcTo(offsetX + width,offsetY,offsetX + width, offsetY + r, r);
+            context.lineTo(offsetX + width,offsetY + height - r);
+            context.arcTo(offsetX + width,offsetY + height, offsetX + width - r,offsetY + height, r);
+            context.lineTo(offsetX + r, offsetY + height);
+            context.arcTo(offsetX,offsetY + height,offsetX,offsetY + height - r,r);
+            context.lineTo(offsetX,offsetY + r);
+            context.arcTo(offsetX,offsetY,offsetX + r,offsetY,r);
+            // 结束路径
+            context.closePath();
+            context.fillStyle = "#007ACC";
+            context.fill();
+        }
+    </script>
+</body>
+</html>
