@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制多边形</title>
+</head>
+<body>
+    <canvas id="demo" width="300" height="200" style="border: 1px solid #ccc"></canvas>
+    <script>
+        /** 
+        *该方法绘制多边形，
+        *n:控制绘制n边形，
+        *dx，dy：控制n边形的位置，
+        *size：控制n边形的大小
+        */
+        function createPolygon(context,n,dx,dy,size){
+            // 开始创建路径
+            context.beginPath();
+            var dig = Math.PI/n*2;
+            for(var i = 0; i < n; i++){
+                var x = Math.cos(i * dig);
+                var y = Math.sin(i * dig);
+                context.lineTo(x * size + dx, y * size + dy);
+            }
+            context.closePath();
+        }
+        var canvas = document.getElementById('demo');
+        var ctx = canvas.getContext('2d');
+        // 绘制三角形
+        createPolygon(ctx,3,80,80,50);
+        ctx.fillStyle = '#DBEAF9';
+        ctx.fill();
+
+        // 绘制五边形
+        createPolygon(ctx,5,200,80,50);
+        ctx.strokeStyle = "#007Acc";
+        ctx.stroke();
+    </script>
+</body>
+</html>

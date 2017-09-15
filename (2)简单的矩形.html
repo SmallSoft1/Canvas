@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单的矩形</title>
+</head>
+<body>
+    <canvas id="demo" width="400" height="180" style="border:1px solid #ccc;"></canvas>
+    <script>
+        var canvas = document.getElementById("demo");
+        var ctx = canvas.getContext("2d");
+        // 填充颜色
+        ctx.fillStyle = "#007ACC";
+        // 绘制矩形
+        ctx.fillRect(20,20,100,60);
+        ctx.fillStyle = "#DBEAF9";
+        ctx.fillRect(30,30,100,60);
+        ctx.strokeStyle = "#007ACC";
+        // 设置线条宽度
+        ctx.lineWidth = 10;
+        // 绘制矩形边框
+        ctx.strokeRect(150,20,100,60);
+        // 线条与线条连接时的类型
+        ctx.lineJoin = "round";
+        ctx.strokeRect(180,40,100,60);
+        ctx.lineJoin = "bevel";
+        ctx.strokeRect(210,60,100,60);
+    </script>
+</body>
+</html>
