@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制文字</title>
+</head>
+<body>
+    <canvas id="demo" width="400" height="100" style="border: 1px solid #ccc;"></canvas>
+    <script>
+        var canvas = document.getElementById('demo');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#2b579a';
+        ctx.strokeStyle = "2b579a";
+        ctx.font = "bold 20px 微软雅黑";
+        // 设置字体位置
+        ctx.textAlign = "left";
+        // 控制文字垂直布局
+        ctx.textBaseline = "top";
+        // 设置实心字体
+        ctx.fillText("Web前端技术与实践",30,10);
+        ctx.fillText("Web前端技术与实践",220,10,100);
+        //设置空心字体
+        ctx.strokeText("Web前端技术与实践",30,40);
+    </script>
+</body>
+</html>
