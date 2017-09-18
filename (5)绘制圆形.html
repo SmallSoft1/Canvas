@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制简单的圆形</title>
+</head>
+<body>
+    <canvas id="demo" width="300" height="300" style="border: 1px solid #ccc;"></canvas>
+    <script>
+        var canvas = document.getElementById("demo");
+        var ctx = canvas.getContext("2d");
+        ctx.strokeStyle = '#007acc';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        // 画圆环
+        ctx.arc(150,150,130,0,Math.PI * 2, true);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fillStyle = '#007acc';
+        ctx.beginPath();
+        //画圆
+        ctx.arc(150,150,110,0,Math.PI * 2,true);
+        ctx.closePath();
+        ctx.fill();
+    </script>
+</body>
+</html>
